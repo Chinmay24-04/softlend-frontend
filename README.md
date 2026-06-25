@@ -2,12 +2,15 @@
 
 A modern React + Vite + TypeScript frontend for Softlend, a fintech platform combining a loan marketplace with an intelligent credit improvement experience.
 
-This repository implements a production-style frontend with:
-- Credit dashboard with a score gauge, health summary, and score factor explanations
-- Loan offers catalog with search, filter, loading/error/empty states, and offer preview modal
-- Accessible keyboard-navigable modal flow for accepting offers
-- Score Simulator and EMI Calculator bonus pages
-- Mocked authentication and local state-driven interactions
+## Project Overview
+
+| Area | Details |
+| --- | --- |
+| Framework | React 18 + Vite + TypeScript |
+| Features | Credit dashboard, loan catalog, search/filter, offer modal, score simulator, EMI calculator |
+| Auth | Mock auth with local storage and protected routes |
+| Data | Mocked offer and score data stored in app state |
+| Repository folder | `softlend.frontend om anna final/softlend.frontend` |
 
 ## Quick Start
 
@@ -15,58 +18,51 @@ This repository implements a production-style frontend with:
 - Node.js 18+
 - npm 9+
 
-### Installation
+### Recommended setup
+
+Open a terminal and run:
 
 ```powershell
-cd "C:\Users\OMII\Downloads\softlend.frontend"
-npm install
-```
-
-### Run locally
-
-```powershell
-npm run dev
-```
-
-Open http://localhost:5173 and use the application.
-
-## Features
-
-- **Credit Dashboard** — dynamic credit score gauge with health summary, detailed score factors, and AI-style improvement recommendations
-- **Loan Offers** — grid-based loan catalog with lender information and eligibility lock state when score is below threshold
-- **Search & Filter** — real-time debounced search (300ms) with multi-criteria filtering by lender name, ID, status, and amount range
-- **State Management** — explicit loading, error, and empty-state UI components for all data scenarios
-- **Offer Modal** — accessible, keyboard-navigable modal with comprehensive offer summary and user confirmation flow
-
-## Bonus Features
-
-- **Score Simulator** — interactive tool to explore projected credit score changes and preview loan eligibility scenarios
-- **EMI Calculator** — dynamic loan affordability calculator with interactive sliders for principal, rate, and tenure
-
-## Business Logic
-
-- The app demonstrates a full frontend flow including mocked authentication, protected routes, and offer acceptance interactions.
-- Mock authentication uses stored credentials and grants access to the `Softlend` dashboard navigation.
-- The project contains sample user data and credit state logic to support loan eligibility and score projection.
-
-## Installation & Build
-
-```powershell
+cd "C:\Users\OMII\Downloads\softlend.frontend\softlend.frontend om anna final\softlend.frontend"
 npm install
 npm run dev
 ```
 
-To build and preview production output:
+> Use the URL shown in the terminal, for example `http://localhost:5173`.
 
-```powershell
-npm run build
-npm run preview
-```
+### Troubleshooting localhost
+
+If the app does not open at `http://localhost:5173`:
+- Confirm you ran `npm run dev` from the nested folder above
+- Use the exact URL shown in the terminal output
+- Check for an alternative port if 5173 is already in use
+- Refresh the browser after the dev server starts
+
+## Feature Summary
+
+| Feature | Description |
+| --- | --- |
+| Credit Dashboard | Dynamic score gauge, health summary, and score factor recommendations |
+| Loan Offers | Grid-based offer list with lender details and eligibility state |
+| Search & Filter | 300ms debounced search + multi-criteria filter on lender, status, ID, and amount |
+| State Handling | Dedicated loading, error, and empty UI screens |
+| Offer Modal | Accessible offer detail modal with confirmation flow |
+| Score Simulator | Simulated score changes and eligibility preview |
+| EMI Calculator | Affordability calculator with range sliders |
+
+## Commands
+
+| Command | Meaning |
+| --- | --- |
+| `npm install` | Install project dependencies |
+| `npm run dev` | Start the local development server |
+| `npm run build` | Build the production bundle |
+| `npm run preview` | Preview the production build locally |
 
 ## Notes
 
-- The repository is designed for frontend assessment and can be extended with real API calls or a mocked HTTP server.
-- The current implementation uses in-app mock data and local storage-driven auth.
+- The app uses mobile-style mock state and local storage auth.
+- The project is intended for frontend assessment and can be extended with API integration or mock HTTP responses.
 
 ## Default credentials
 
@@ -75,4 +71,4 @@ npm run preview
 
 ## Auth behavior
 
-The auth flow is mocked in `src/auth/auth.ts`. Use the default credentials to sign in, then access the dashboard and offers pages.
+Mock auth is implemented in `src/auth/auth.ts`. Use the credentials above to sign in and access the protected dashboard.
